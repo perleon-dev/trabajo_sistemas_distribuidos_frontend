@@ -1,0 +1,143 @@
+<nz-page-header>
+    <nz-breadcrumb nz-page-header-breadcrumb>
+        <nz-breadcrumb-item><a>Contrato</a></nz-breadcrumb-item>
+        <nz-breadcrumb-item>Contrato MarketPlace</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Carga Masiva</nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+    <nz-page-header-content>
+        <form nz-form [formGroup]="formGroup" (keyup.enter)="searchContract()">
+            <nz-divider></nz-divider>
+            <div nz-row class="filter-container">
+                <div nz-col [nzSm]="4" [nzXs]="4">
+                    <nz-form-item>
+                        <nz-input-group [nzSuffix]="suffixIconSearchRuc" class="mt-5">
+                            <input #rucIdT placeholder="Filtrar por RUC" formControlName="ruc" nz-input [nzAutocomplete]="autoRuc" (input)="onInputRuc($event)" />
+                            <nz-autocomplete #autoRuc [compareWith]="compareRuc">
+                                <nz-auto-option *ngFor="let document of DocumentIdListFiltered" [nzValue]="document.ruc" [nzLabel]="document.ruc">
+                                    {{ document.ruc }}
+                                </nz-auto-option>
+                            </nz-autocomplete>
+                        </nz-input-group>
+                        <ng-template #suffixIconSearchRuc>
+                            <i nz-icon nzType="close-circle" nzTheme="outline" (click)="clear('ruc')" *ngIf="rucIdT.value != ''" class="cursor-pointer"></i>
+                        </ng-template>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm]="4" [nzXs]="4">
+                    <nz-form-item>
+                        <nz-input-group [nzSuffix]="suffixIconSearchBusinessName" class="mt-5">
+                            <input #businessNameT placeholder="Filtrar por cliente" formControlName="businessName" nz-input [nzAutocomplete]="autoBusinessName" (input)="onInputCustomer($event)" />
+                            <nz-autocomplete #autoBusinessName [compareWith]="compareCustomer">
+                                <nz-auto-option *ngFor="let customer of customerListFiltered" [nzValue]="customer.business_name" [nzLabel]="customer.business_name">
+                                    {{ customer.business_name }}
+                                </nz-auto-option>
+                            </nz-autocomplete>
+                        </nz-input-group>
+                        <ng-template #suffixIconSearchBusinessName>
+                            <i nz-icon nzType="close-circle" nzTheme="outline" (click)="clear('businessName')" *ngIf="businessNameT.value != ''" class="cursor-pointer"></i>
+                        </ng-template>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm]="4" [nzXs]="4">
+                    <nz-form-item>
+                        <nz-input-group [nzSuffix]="suffixIconSearchTradename" class="mt-5">
+                            <input #tradenameT placeholder="Filtrar por Id Suma" formControlName="tradename" nz-input [nzAutocomplete]="autoIdSuma" (input)="onInputIdSuma($event)" />
+                            <nz-autocomplete #autoIdSuma [compareWith]="compareIdSuma">
+                                <nz-auto-option *ngFor="let IdSuma of IdSumaListFiltered" [nzValue]="IdSuma.tradename" [nzLabel]="IdSuma.tradename">
+                                    {{ (IdSuma.tradename !== "null") ? IdSuma.tradename : "" }}
+                                </nz-auto-option>
+                            </nz-autocomplete>
+                        </nz-input-group>
+                        <ng-template #suffixIconSearchTradename>
+                            <i nz-icon nzType="close-circle" nzTheme="outline" (click)="clear('tradename')" *ngIf="tradenameT.value != ''" class="cursor-pointer"></i>
+                        </ng-template>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm]="4" [nzXs]="4">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Campo obligatorio.">
+                            <nz-date-picker formControlName="startDate" nzPlaceHolder="Fecha Inicio"></nz-date-picker>
+
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm]="4" [nzXs]="4">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Campo obligatorio.">
+                            <nz-date-picker formControlName="endDate" nzPlaceHolder="Fecha Fin"></nz-date-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm]="4" [nzXs]="4" style="padding: 5px;" class="flex-end">
+                    <button nz-button nzType="primary" (click)="searchContract()" style="margin-right: 5px;"><i nz-icon nzType="search"></i>Buscar</button>
+
+                </div>
+            </div>
+            <!--
+            <div class="flex-end mt-10">
+                <rp-button type="default" class="ml-0" (click)="openFormModal()">
+                    <i nz-icon nzType="plus"></i> Carga Masiva
+                </rp-button>
+
+                <rp-button type="default" (click)="CrearSellers()">
+                    <i nz-icon nzType="up-circle" nzTheme="outline"></i> Crear Sellers
+                </rp-button>
+            </div>
+            -->
+        </form>
+        <div class="flex-end mt-10 mb-10">
+            <button nz-button nzType="primary" (click)="sendPrecontract()" style="margin-right: 5px;"><i nz-icon nzType="upload"></i>Envio de Contratos</button>
+
+            <button nz-button nzType="primary" (click)="openFormModal()" style="margin-right: 5px;"><i nz-icon nzType="plus"></i>Carga de contratos</button>
+
+            <button nz-button nzType="primary" (click)="AnulacionMasiva()" style="margin-right: 5px;"><i nz-icon nzType="close-circle" nzTheme="outline"></i>Anulación</button>
+        </div>
+    </nz-page-header-content>
+</nz-page-header>
+
+<div nz-row>
+    <nz-table #fixedTable [nzScroll]="{ x: '1150px' }" nzShowPagination nzShowSizeChanger [nzFrontPagination]="false" [nzData]="contractsTradenameList" nzSize="small" [nzTotal]="totalRows" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" (nzPageSizeChange)="pageSizeChanged($event)"
+        (nzPageIndexChange)="pageIndexChanged($event)">
+        <thead>
+            <tr class="cabecera">
+                <th nzWidth="25px">
+                    <input type="checkbox" #tt id="checkboxTotal" style="width: 24px; height: 24px;" (click)="toggle(tt)" />
+                </th>
+                <th nzWidth="110px">RUC</th>
+                <th nzWidth="120px">SELLER</th>
+                <th nzWidth="100px">MARCA (ID SUMA)</th>
+                <th nzWidth="100px">FECHA INICIO</th>
+                <th nzWidth="120px">COMISIÓN VARIABLE</th>
+                <th nzWidth="120px">COMISIÓN FIJA</th>
+                <th nzWidth="120px">CONDICIÓN ECONÓMICA</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <ng-container *ngFor="let contractsTradename of contractsTradenameList">
+                <tr class="table_preContract">
+                    <td nzWidth="25px" nzLeft="5px">
+                        <input type="checkbox" value="{{ 
+                                contractsTradename.ruc + '$$$' + 
+                                contractsTradename.contract_id + '$$$' +
+                                contractsTradename.contract_version + '$$$' +
+                                contractsTradename.contract_modification
+                                }}" name="seller" style="width: 24px; height: 24px;" />
+                    </td>
+                    <td nzWidth="70px">{{contractsTradename.ruc}}</td>
+                    <td nzWidth="70px">{{contractsTradename.business_name}}</td>
+                    <td nzWidth="100px" nzTooltipTitle="{{contractsTradename.tradename}}" nzTooltipPlacement="topLeft" nz-tooltip>{{ contractsTradename.tradename | slice:0:25 }}</td>
+                    <td nzWidth="100px">{{contractsTradename.contract_start_date | date: 'yyyy/MM/dd'}}</td>
+                    <td nzWidth="120px" nzTooltipTitle="{{contractsTradename.commission_variable}}" nzTooltipPlacement="topLeft" nz-tooltip>{{ contractsTradename.commission_variable | slice:0:25 }}</td>
+                    <td nzWidth="120px" nzTooltipTitle="{{contractsTradename.commission_fixed}}" nzTooltipPlacement="topLeft" nz-tooltip>{{ contractsTradename.commission_fixed | slice:0:25 }}</td>
+                    <td nzWidth="120px" nzTooltipTitle="{{contractsTradename.economic_condition}}" nzTooltipPlacement="topLeft" nz-tooltip>{{ contractsTradename.economic_condition | slice:0:25 }}</td>
+
+                </tr>
+            </ng-container>
+
+        </tbody>
+    </nz-table>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>
