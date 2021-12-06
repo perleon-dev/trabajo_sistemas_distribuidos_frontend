@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "Publico Banner Ultra";
+    src: url(assets/fonts/publico-banner/publico-banner-ultra.ttf);
+}
+
+@font-face {
+    font-family: "Circular Pro Black";
+    src: url(assets/fonts/circular-pro/circular-pro-black.ttf);
+}
+
+@font-face {
+    font-family: "Circular Pro Bold";
+    src: url(assets/fonts/circular-pro/circular-pro-bold.ttf);
+}
+
+@font-face {
+    font-family: "Circular Pro Medium";
+    src: url(assets/fonts/circular-pro/circular-pro-medium.ttf);
+}
+
+@font-face {
+    font-family: "Circular Pro Book";
+    src: url(assets/fonts/circular-pro/circular-pro-book.ttf);
+}
+
+body {
+    font-family: "Circular Pro Medium", sans-serif;
+}
+
+.cdk-overlay-pane {
+    width: auto!important;
+}
+
+.ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-vertical-left .ant-menu-item:not(:last-child),
+.ant-menu-vertical-right .ant-menu-item:not(:last-child),
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+    margin-bottom: 0px!important;
+}
+
+.ant-menu-vertical .ant-menu-item,
+.ant-menu-vertical-left .ant-menu-item,
+.ant-menu-vertical-right .ant-menu-item,
+.ant-menu-inline .ant-menu-item,
+.ant-menu-vertical .ant-menu-submenu-title,
+.ant-menu-vertical-left .ant-menu-submenu-title,
+.ant-menu-vertical-right .ant-menu-submenu-title,
+.ant-menu-inline .ant-menu-submenu-title {
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+.label-inline {
+  margin-top: 12px!important;
+}
+.label-inline-textarea{
+  margin-top: 25px!important;
+}
+.ant-form-item-label {
+    line-height: 1.5!important;
+    margin: 0 0 0px;
+}
+
+.ant-form-item {
+    padding: 0 10px!important;
+}
+
+.mt-5 {
+    margin-top: 5px!important;
+}
+
+.mt-10 {
+    margin-top: 10px!important;
+}
+
+.mt-15 {
+    margin-top: 15px!important;
+}
+
+.mt-20 {
+    margin-top: 20px!important;
+}
+
+.mt-5 {
+    margin-bottom: 5px!important;
+}
+
+.mb-10 {
+    margin-bottom: 10px!important;
+}
+
+.mb-15 {
+    margin-bottom: 15px!important;
+}
+
+.mb-20 {
+    margin-bottom: 20px!important;
+}
+
+.ant-form {
+    width: 100%;
+}
+
+.text-right {
+    text-align: right!important;
+}
+
+.text-left {
+    text-align: left!important;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.ant-form-item {
+    margin-bottom: 5px!important;
+}
+
+.ant-calendar-picker {
+    width: 100%;
+}
+
+@media (max-width: 575px) {
+    .ant-form-item-label {
+        padding: 0 0 4px!important;
+    }
+}
+
+.filter-container {
+    padding: 10px 5px 5px 5px !important;
+    border-radius: 5px;
+    background: #f0f2f5;
+}
+
+.card-template-head .ant-card-head{
+  background-color: #7300E0;
+  color: white;
+}
+
+.label-bold{
+  font-weight: bold;
+}
+
+.btn-red {
+  background-color: red!important; 
+  color: white!important; 
+  border-color: red!important;
+}
+
+.btn-header-card{
+  border-color: white!important;
+}
+
+.check-header {
+  border-color: white!important;
+}
+
+.ant-table-row-expand-icon-cell {
+  background-color: #7300E0!important;
+}
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-options {
+    display: inline-flex;
+    button {
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+}

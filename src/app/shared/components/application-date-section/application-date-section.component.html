@@ -1,0 +1,84 @@
+<form nz-form [formGroup] = "frmFechaAplication">
+    <nz-card nzTitle = "Fechas de Aplicación IPC Anterior" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSping">
+            <nz-collapse>
+                <nz-collapse-panel nzHeader = "Fechas de Aplicación IPC - Contrato">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "fixedrentipc" nzSm="7" nzXs="24" class="label-inline">IPC renta fija</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "fixedrentipcprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "commonexpenseipc" nzSm="7" nzXs="24" class="label-inline">IPC gasto común</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "commonexpenseipcprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "promotionexpenseipc" nzSm="7" nzXs="24" class="label-inline">IPC gasto promoción</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "promotionexpenseipcprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "projectexpenseipc" nzSm="8" nzXs="24" class="label-inline">IPC gasto del proyecto</nz-form-label>
+                                <nz-form-control nzSm="16" nzXs="24">
+                                    <input nz-input type="text" formControlName = "projectexpenseipcprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+                <nz-collapse-panel nzHeader = "Fechas de Aplicación IPC" nzActive = "true">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "fixedrentipc" nzSm="7" nzXs="24" class="label-inline">21. IPC renta fija</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "fixedrentipc" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "commonexpenseipc" nzSm="7" nzXs="24" class="label-inline">22. IPC gasto común</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "commonexpenseipc" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "promotionexpenseipc" nzSm="7" nzXs="24" class="label-inline">23. IPC gasto promoción</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "promotionexpenseipc" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "projectexpenseipc" nzSm="8" nzXs="24" class="label-inline">24. IPC gasto del proyecto</nz-form-label>
+                                <nz-form-control nzSm="16" nzXs="24">
+                                    <input nz-input type="text" formControlName = "projectexpenseipc" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </nz-spin>
+    </nz-card>
+</form>

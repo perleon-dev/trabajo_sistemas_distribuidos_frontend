@@ -1,0 +1,34 @@
+export class ContractMarkeplace {
+    contractId: number;
+    contractVersion: number;
+    contractModification: number;
+    contractStartDate: Date;
+    contractEndDate: Date;
+    ruc: string;
+    businessName: string;
+    bankAccount: string;
+    codeContract: string;
+    cci: string;
+    typeSeller: number;
+    productCommission: number
+    typeSellerName: string;
+    state: number;
+    stateName: string;
+    tradenameId: number;
+    tradename: string;
+    mallId: number;
+    bankId: string;
+    bankName: string;
+    typeCurrency: number;
+    typeCurrentName: string;
+    bankAccountType: string;
+    bankAccountTypeName: string;
+    registerUserId: number;
+    registerUserFullname: string;
+    registerDatetime: Date;
+    updateRegisterId: number;
+    updateUserFullname: string;
+    updateDatetime: Date;
+    ubigeo: string;
+    segmentId: number;
+}

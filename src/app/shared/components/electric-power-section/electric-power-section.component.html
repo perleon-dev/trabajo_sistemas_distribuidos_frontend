@@ -1,0 +1,70 @@
+<form nz-form [formGroup] = "frmEnerciaElectrica">
+    <nz-card nzTitle = "Energía Eléctrica Anterior" class="mt-20 card-template-head">
+        <nz-collapse>
+            <nz-collapse-panel nzHeader = "Energía Elecétrica - Contrato">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "chargeelectricalenergy" nzSm="9" nzXs="24" class="label-inline">Carga de energía eléctrica</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "chargeelectricalenergyprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "amountinvoice" nzSm="7" nzXs="24" class="label-inline">Monto a facturar</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">                                
+                                <nz-input-group nzAddOnBefore="S/.">
+                                    <input nz-input type="text" formControlName = "amountinvoiceprevious" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "electricalenergyconsumption" nzSm="9" nzXs="24" class="label-inline">Consumo de energía eléctrica</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "electricalenergyconsumptionprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader = "Energía Eléctrica" nzActive = "true">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "chargeelectricalenergy" nzSm="9" nzXs="24" class="label-inline">29. Carga de energía eléctrica</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "chargeelectricalenergy" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "amountinvoice" nzSm="7" nzXs="24" class="label-inline">30. Monto a facturar</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">                                
+                                <nz-input-group nzAddOnBefore="S/.">
+                                    <input nz-input type="text" formControlName = "amountinvoice" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "electricalenergyconsumption" nzSm="9" nzXs="24" class="label-inline">31. Consumo de energía eléctrica</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "electricalenergyconsumption" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-card>
+</form>

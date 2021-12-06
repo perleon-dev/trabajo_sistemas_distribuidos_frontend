@@ -1,0 +1,46 @@
+<form nz-form [formGroup] = "frmAgua">
+    <nz-card nzTitle = "Agua Anterior" class="mt-20 card-template-head">
+        <nz-collapse>
+            <nz-collapse-panel nzHeader = "Agua - Contrato">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "waterconsumption" nzSm="7" nzXs="24" class="label-inline">Consumo de agua</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">
+                                <input nz-input type="text" formControlName = "waterconsumptionprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "amountinvoicewater" nzSm="7" nzXs="24" class="label-inline">Monto a facturar</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">
+                                <input nz-input type="text" formControlName = "amountinvoicewaterprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader = "Agua" nzActive = "true">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "waterconsumption" nzSm="7" nzXs="24" class="label-inline">32. Consumo de agua</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">
+                                <input nz-input type="text" formControlName = "waterconsumption" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "amountinvoicewater" nzSm="7" nzXs="24" class="label-inline">33. Monto a facturar</nz-form-label>
+                            <nz-form-control nzSm="17" nzXs="24">
+                                <input nz-input type="text" formControlName = "amountinvoicewater" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-card>
+</form>

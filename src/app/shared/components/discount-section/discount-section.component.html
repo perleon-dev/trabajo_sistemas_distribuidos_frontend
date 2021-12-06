@@ -1,0 +1,41 @@
+<form nz-form [formGroup] = "frmDescuento">
+    <nz-card nzTitle = "Descuentos" class="mt-20 card-template-head">
+        <div nz-row>
+            <div nz-col nzSm = "24" class="mt-20">
+                <nz-table nzShowPagination = "false" [nzData] = "contractTemplateDiscount" [nzNoResult] = "emptyContractTemplateDiscount"
+                [nzLoading] = "loadingTableContractTemplateDiscount">
+                    <thead>
+                        <th>Concepto</th>
+                        <th>Moneda</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>% Dscto</th>
+                        <th>% Descuento a Emitir</th>
+                        <th>Inicio Vigencia</th>
+                        <th>Fin Vigencia</th>
+                        <th>Motivo</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let item of contractTemplateDiscount">
+                            <td>{{item.conceptName}}</td>
+                            <td>{{item.currencyName}}</td>
+                            <td>{{item.typeName}}</td>
+                            <td>{{item.value}}</td>
+                            <td>{{item.discount | amoutFormat}}</td>
+                            <td>{{item.discountEmit | amoutFormat}}</td>
+                            <td>{{item.startValidity | dateFormat}}</td>
+                            <td>{{item.endValidity | dateFormat}}</td>
+                            <td>{{item.motiveName}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+                <ng-template #emptyContractTemplateDiscount>
+                    <div style="text-align: center;" *ngIf="(contractTemplateDiscount.length === 0)">
+                        <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                        <p>No hay Datos</p>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </nz-card>
+</form>

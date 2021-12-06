@@ -1,0 +1,123 @@
+<form nz-form [formGroup] = "frmGarantia">
+    <nz-card nzTitle = "Garantía Anterior" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSping">
+            <nz-collapse>
+                <nz-collapse-panel nzHeader = "Garantía - Contrato">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "rentnumber" nzSm="7" nzXs="24" class="label-inline">25. Nro de rentas</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "rentnumberprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranteetype" nzSm="7" nzXs="24" class="label-inline">26. Tipo de Garantía</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "guaranteetypeprevious" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranteeamount" nzSm="7" nzXs="24" class="label-inline">27. Monto de Garantía</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">                                    
+                                    <nz-input-group nzAddOnBefore="S/">
+                                        <input nz-input type="text" formControlName = "guaranteeamountprevious" />
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "additionalguarantee" nzSm="7" nzXs="24" class="label-inline">28. Garantía adicional</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">                                    
+                                    <nz-input-group nzAddOnBefore="S/">
+                                        <input nz-input type="text" formControlName = "additionalguaranteeprevious" />
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+                <nz-collapse-panel nzHeader = "Garantía" nzActive = "true">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "rentnumber" nzSm="7" nzXs="24" class="label-inline">25. Nro de rentas</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "rentnumber" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranteetype" nzSm="7" nzXs="24" class="label-inline">26. Tipo de Garantía</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "guaranteetype" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranteeamount" nzSm="7" nzXs="24" class="label-inline">27. Monto de Garantía</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">                                    
+                                    <nz-input-group nzAddOnBefore="S/">
+                                        <input nz-input type="text" formControlName = "guaranteeamount" />
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "maximundeliverydate" nzSm="7" nzXs="24" class="label-inline">Fecha Máxima de Entrega</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "maximundeliverydate" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "additionalguarantee" nzSm="7" nzXs="24" class="label-inline">28. Garantía adicional</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "additionalguarantee" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranteestate" nzSm="7" nzXs="24" class="label-inline">Estado de la Garantía</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "guaranteestate" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "guaranterestriction" nzSm="10" nzXs="24" class="label-inline">Esta garantía cuenta con restricción</nz-form-label>
+                                <nz-form-control nzSm="14" nzXs="24">
+                                    <nz-radio-group formControlName = "rbtgguaranterestriction">
+                                        <label nz-radio nzValue="1">Si</label>
+                                        <label nz-radio nzValue="0">No</label>
+                                      </nz-radio-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </nz-spin>
+    </nz-card>
+</form>

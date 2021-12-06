@@ -1,0 +1,34 @@
+<form nz-form [formGroup] = "frmInmueble">
+    <nz-card nzTitle = "Inmueble" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSpin">
+            <div nz-row>
+                <div nz-col nzSpan="12">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "propertyname" nzSm="7" nzXs="24" class="label-inline">Nombre Inmueble</nz-form-label>
+                        <nz-form-control nzSm="17" nzXs="24">
+                            <input nz-input type="text" formControlName = "propertyname" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="12">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "startdateoperation" nzSm="9" nzXs="24" class="label-inline">Fecha de Inicio de Operaciones</nz-form-label>
+                        <nz-form-control nzSm="15" nzXs="24">
+                            <input nz-input type="text" formControlName = "startdateoperation" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row>
+                <div nz-col nzSpan="12">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "propertyaddress" nzSm="7" nzXs="24" class="label-inline">Dirección Inmueble</nz-form-label>
+                        <nz-form-control nzSm="17" nzXs="24">
+                            <textarea nz-input type="text" formControlName = "propertyaddress"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </nz-spin>        
+    </nz-card>
+</form>

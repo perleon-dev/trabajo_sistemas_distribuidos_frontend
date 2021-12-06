@@ -1,0 +1,63 @@
+<div style="width: 600px; margin:0 auto;">
+    <div>
+        <p>
+            Descargarga de contratos
+        </p>
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <p>Formato Seller Center</p>
+                <button nz-button nzType="primary" (click)="DownloadSellerCenter()" style="margin-right: 5px;"><i nz-icon nzType="download"></i>Descargar</button>
+            </div>
+            <div nz-col nzSpan="8">
+                <p>Formato VTex To VTex</p>
+                <button nz-button nzType="primary" (click)="DownloadVTexToVTex()" style="margin-right: 5px;"><i nz-icon nzType="download"></i>Descargar</button>
+            </div>
+            <div nz-col nzSpan="8">
+                <p>Formato VTEX</p>
+                <button nz-button nzType="primary" (click)="DownloadVTEX()" style="margin-right: 5px;"><i nz-icon nzType="download"></i>Descargar</button>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <form nz-form enctype="multipart/form-data">
+        <p>
+            Carga de contratos
+        </p>
+        <div nz-row>
+            <div nz-col nzSpan="6" style="padding-top: 5px;">
+                <nz-select name="tipo" nzShowSearch nzAllowClear nzPlaceHolder="Tipo de contrato" [(ngModel)]="OptionId">
+                    <nz-option *ngFor="let item of ListOption" [nzLabel]="item.description" [nzValue]="item.field1"></nz-option>
+
+                </nz-select>
+            </div>
+            <div nz-col nzSpan="7">
+                <nz-form-item nz-row nzType="flex" nzJustify="space-between">
+                    <nz-form-control [nzSm]="30">
+                        <nz-upload [(nzFileList)]="fileList" nzAccept=".xlsx,.xls" [nzShowButton]="fileList.length == 0" [nzBeforeUpload]="beforeUpload">
+                            <button nz-button><i nz-icon nzType="upload"></i>Seleccione el archivo</button>
+                        </nz-upload>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+
+    </form>
+    <div class="ml-5 mt-10" nz-row nzType="flex" nzJustify="start">
+        <p class="ant-form-item-label"><span nz-text>Se podrán cargar múltiples vigencias en diferentes filas</span></p>
+        <p class="ant-form-item-label"><span nz-text>Para las vigencias el valor "0" significa indeterminado</span></p>
+        <p class="ant-form-item-label"><span nz-text>En caso de no ingresarse categoría se clasificara como un contrato con comisión única</span></p>
+    </div>
+</div>
+
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div *nzModalFooter>
+    <button nz-button type="primary" (click)="onSave()">
+        <i nz-icon nzType="save"></i> Cargar Contrato
+    </button>
+    <button nz-button type="default" (click)="onCancel()" (disabled)="true">
+        <i nz-icon nzType="close"></i> Cancelar
+    </button>
+</div>

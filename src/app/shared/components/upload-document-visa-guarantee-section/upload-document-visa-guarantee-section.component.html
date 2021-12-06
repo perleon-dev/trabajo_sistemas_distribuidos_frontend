@@ -1,0 +1,106 @@
+<form nz-form [formGroup] = "frmCargarDocumentoVisadoGarantia">
+    <div nz-row>
+        <nz-card [nzTitle]="titleChange" class="mt-20 card-template-head">
+            <div nz-row>
+                <div nz-col [nzSm]="24" class="text-right" style="padding-bottom: 20px;">
+                    <button nz-button nzType="primary" (click) = "onTemplateLeaseRequest()" [nzLoading] = "loadingTemplateLeaseRequest">Descargar Plantilla Evaluación de Creditos</button>
+                </div>
+            </div>
+            <div nz-row>
+                <nz-table nzShowPagination="false" [nzData]="contractGuaranteeDocuments"
+                    [nzNoResult]="emptycontractGuaranteeDocuments" [nzLoading]="loadintTableUploadDocument">
+                    <thead>
+                        <th>Tipo Documento</th>
+                        <th>Nombre Documento</th>
+                        <th nzAlign="center">Subir/Eliminar</th>
+                        <th>Descargar</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of contractGuaranteeDocuments">
+                            <td><span *ngIf = "item.obligatory" style="color: red;">* </span>{{item.documentType}}</td>
+                            <td>{{item.documentName}}</td>
+                            <td class="text-center">
+                                <div *ngIf="!item.upload && showControl">
+                                    <nz-upload [nzLimit]="1" [nzShowUploadList]="false"
+                                        [nzCustomRequest]="uploadDocument" [attr.id]="item.parameterDetailId"
+                                        ngDefaultControl>
+                                        <button nz-button nzType="default" nzShape="circle"
+                                            (click)="setSelectedDocumentType(item.documentType, item.allowedExtensions)">
+                                            <i nz-icon nzType="to-top" nzTheme="outline"></i>
+                                        </button>
+                                    </nz-upload>
+                                </div>
+                                <div *ngIf="item.upload && item.buttonDelete">
+                                    <button nz-button nzType="default" nzShape="circle"
+                                        (click)="openDeleteDocument(item.documentId)">
+                                        <i nz-icon nzType="delete" nzTheme="outline"></i></button>
+
+                                </div>
+                            </td>
+                            <td>
+                                <button nz-button nzType="default" nzShape="circle" *ngIf="item.upload"
+                                    (click)="downloadDocument(item.s3_id)">
+                                    <i nz-icon nzType="download" nzTheme="outline"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+                <ng-template #emptycontractGuaranteeDocuments>
+                    <div style="text-align: center;" *ngIf="(contractGuaranteeDocuments.length === 0)">
+                        <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                        <p>No hay documentos</p>
+                    </div>
+                </ng-template>
+            </div>
+            <div nz-row class="mt-10">
+                <div nz-col nzSpan = "12">
+                    <nz-form-item>
+                        <nz-form-label nzFor="exemptattached" nzSm="3" nzXs="24" class="label-inline">Exento
+                        </nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">
+                            <nz-radio-group formControlName="rbtexemptattached">
+                                <label nz-radio nzValue="1">Si</label>
+                                <label nz-radio nzValue="0">No</label>
+                            </nz-radio-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan = "12">
+                    <nz-form-item>
+                        <nz-form-label nzFor="ddlobservationmotive" nzSm="10" nzXs="24"
+                            class="label-inline">Motivos de Observación</nz-form-label>
+                        <nz-form-control nzSm="14" nzXs="24">
+                            <nz-select formControlName="ddlobservationmotive" nzPlaceHolder="Seleccione">
+                                <nz-option *ngFor="let item of observationMotiveList"
+                                            [nzValue]="item.parameterDetailId" [nzLabel]="item.description">
+                                        </nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row>
+                <div nz-col nzSpan = "12">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "note" nzSm="3" nzXs="24" class="label-inline">Notas</nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">                                    
+                            <textarea style="width: 100%;" formControlName = "note"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row nzGutter="16">
+                <div nz-col nzSpan = "8">
+                    <button nz-button nzType="primary" [nzLoading] = "loadingApproved" (click) = "onApproved()" nzBlock>Aprobar</button>
+                </div>
+                <div nz-col nzSpan = "8">
+                    <button nz-button nzType="default" (click) = "onObserver()" [nzLoading] = "loadingObserver" nzBlock>Observar</button>
+                </div>
+                <div nz-col nzSpan = "8">
+                    <button nz-button nzType="default" nzBlock (click) = "onRejected()" [nzLoading] = "loadingRejected" style="background-color: red; color: white; border-color: red;">Rechazar</button>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</form>

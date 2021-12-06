@@ -1,0 +1,165 @@
+.realplaza-header {
+  background: #7300e0;
+  height: 60px;
+  // width: 100%;
+  z-index: 10;
+  .realplaza-logo {
+    float: left;
+    display: block;
+    margin-top: 11px;
+    min-width: 48px;
+    border-right: 1px solid #dddedf;
+    & img {
+      height: 30px;
+    }
+  }
+  .realplaza-logo-2 {
+    float: left;
+    display: block;
+    margin-top: 10px;
+    margin-left: 14px;
+    margin-right: 5px;
+    & img {
+      height: 30px;
+    }
+  }
+  .realplaza-main-title {
+    color: #ffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .realplaza-sub-title {
+    color: #ffff;
+  }
+}
+
+.new-menu {
+  background-color: #7300e0!important;
+  color: #ffffff!important;
+  font-weight: 500;
+
+  li.ant-menu-submenu-active, 
+  li>div.ant-menu-submenu-title:hover {
+    color: #ffffff!important;
+  }
+
+  li.ant-menu:not(.ant-menu-inline) 
+  li.ant-menu-submenu-open {
+    color: #ffffff!important;
+  }
+  li>div.ant-menu-item-active,
+  li>div.ant-menu-item:hover,
+  li>div.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+  li>div.ant-menu-submenu-active,
+  li>div.ant-menu-submenu-title:hover {
+    color: #ffffff!important;
+  }
+}
+.new-menu > .ant-menu-submenu-title {
+  color: #ffffff!important;
+}
+
+.new-menu:hover {
+  background-color: #7300e0!important;
+  color: #ffffff!important;
+}
+
+.realplaza-logout {
+  width: auto;
+  float: right; 
+  padding: 0 10px;
+  height: 60px;
+  color: #fff; 
+  font-size: 21px;
+}
+
+.realplaza-user {
+  width: auto;
+  float: right; 
+  height: 60px;
+  color: #fff; 
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+
+// [nz-menu] {
+//   line-height: 64px;
+// }
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-content {
+  padding: 0 50px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+nz-content {
+  height: calc(100vh - 110px);
+  padding: 16px!important;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+  height: 100%
+}
+[nz-menu] {
+  // line-height: 46px!important;
+  line-height: 36px !important;
+}
+
+.content-menu {
+  overflow: overlay;
+  height: 40px;
+}
+
+.content-menu::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.content-menu::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.content-menu::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Cambiamos el fondo cuando esté en active */
+.content-menu::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+.content-menu::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+/* Cambiamos el fondo cuando esté en active o hover */
+.content-menu::-webkit-scrollbar-track:hover,
+.content-menu::-webkit-scrollbar-track:active {
+  background:radial-gradient();
+}
+
+.cdk-overlay-pane {
+  width: 200px!important;
+}

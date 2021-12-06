@@ -1,0 +1,83 @@
+<style>
+    .new-menu>.ant-menu-submenu-title {
+        color: #ffffff !important;
+    }
+</style>
+<nz-layout>
+    <nz-header>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+            <li nz-menu-item class="realplaza-header" style="width: auto;">
+                <a class="realplaza-logo" routerLink="/home">
+                    <img src="../../../assets/images/logo2.svg" alt="Logo">
+                </a>
+                <div class="realplaza-logo-2">
+                    <img src="../../../assets/images/advance.png" alt="logo" />
+                </div>
+                <div class="center">
+                    <span class="realplaza-main-title">
+                        ADVANCE
+                    </span>
+                    &nbsp;&nbsp;
+                    <span class="realplaza-sub-title">
+                        Real Estate
+                    </span>
+                </div>
+            </li>
+            <li nz-menu-item class="realplaza-logout" (click)="logout()">
+                <div class="center">
+                    <i nz-icon nzType="logout" nzTheme="outline" title="Salir" style="font-size: 20px;"></i>
+                </div>
+            </li>
+            <li nz-menu-item class="realplaza-user">
+                <div class="center">
+                    <i nz-icon nzType="user" nzTheme="outline"></i>
+                    Bienvenido, {{user_name}}
+                </div>
+            </li>
+        </ul>
+    </nz-header>
+    <div class="another-test" #div style="border-bottom: 2px solid #ffc841;"></div>
+    <div style="z-index: 1;">
+        <ul id="ul" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed" nzMode="horizontal"
+            class="content-menu new-menu" #ul>
+
+            <li nz-submenu nzTitle="{{option.label}}" (click)="onClickPage(option)" style="color: #ffffff!important;"
+                *ngFor="let option of menu">
+                <ul>
+                    <ng-container *ngFor="let item1 of option.child">
+                        <li *ngIf="(item1.child.length > 0)" nz-submenu nzTitle="{{item1.label}}"
+                            (click)="onClickPage(item1)">
+                            <ng-container *ngFor="let item2 of item1.child">
+                        <li *ngIf="(item2.child.length > 0)" nz-submenu nzTitle="{{item2.label}}"
+                            (click)="onClickPage(item2)">
+                            <ng-container *ngFor="let item3 of item2.child">
+                        <li *ngIf="(item3.child.length > 0)" nz-submenu nzTitle="{{item3.label}}"
+                            (click)="onClickPage(item3)">
+                            <ng-container *ngFor="let item4 of item3.child">
+                        <li *ngIf="(item4.child.length > 0)" nz-submenu nzTitle="{{item4.label}}"
+                            (click)="onClickPage(item4)">
+                            <ng-container *ngFor="let item5 of item4.child">
+                        <li nz-menu-item (click)="onClickPage(item5)">{{item5.label}}</li>
+                            </ng-container>
+            </li>
+            <li *ngIf="(item4.child.length == 0)" nz-menu-item (click)="onClickPage(item4)">{{item4.label}}</li>
+            </ng-container>
+            </li>
+            <li *ngIf="(item3.child.length == 0)" nz-menu-item (click)="onClickPage(item3)">{{item3.label}}</li>
+            </ng-container>
+            </li>
+            <li *ngIf="(item2.child.length == 0)" nz-menu-item (click)="onClickPage(item2)">{{item2.label}}</li>
+            </ng-container>
+            </li>
+            <li *ngIf="(item1.child.length == 0)" nz-menu-item (click)="onClickPage(item1)">{{item1.label}}</li>
+            </ng-container>
+        </ul>
+        </li>
+        </ul>
+    </div>
+    <nz-content style="height: auto;">
+        <div class="inner-content" style="height: auto;">
+            <router-outlet></router-outlet>
+        </div>
+    </nz-content>
+</nz-layout>

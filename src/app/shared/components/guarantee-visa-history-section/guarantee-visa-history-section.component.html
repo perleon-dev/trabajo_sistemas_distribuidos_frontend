@@ -1,0 +1,27 @@
+<form nz-form [formGroup] = "frmHistorialVisadoGarantia">
+    <nz-card nzTitle="Historial de Visados - Garantía" class="mt-20 card-template-head">
+        <nz-table nzShowPagination="false" [nzData]="contractVisaGuaranteeList"
+            [nzNoResult]="emptyContractVisaGuarantees" [nzLoading] = "loadingTable">
+            <thead>
+                <th>Perfil</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Comentario</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of contractVisaGuaranteeList">
+                    <td>{{item.perf_c_vnomb}}</td>
+                    <td>{{item.visad_c_estado}}</td>
+                    <td>{{item.visad_c_fecha_registro | date:'dd/MM/yyyy h:mma'}}</td>
+                    <td>{{item.visad_c_comentario}}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+        <ng-template #emptyContractVisaGuarantees>
+            <div style="text-align: center;" *ngIf="(contractVisaGuaranteeList.length === 0)">
+                <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                <p>No hay datos</p>
+            </div>
+        </ng-template>
+    </nz-card>
+</form>

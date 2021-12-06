@@ -1,0 +1,102 @@
+<form nz-form [formGroup] = "frmFechaPlazo">
+    <nz-card nzTitle = "Fechas y Plazos Anterior" class="mt-20 card-template-head">
+        <nz-collapse>
+            <nz-collapse-panel nzHeader = "Fechas y Plazos - Contrato">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "contractsubscriptiondate" nzSm="10" nzXs="24" class="label-inline">Fecha de Suscripción de contrato</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "contractsubscriptiondateprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "startdateoperation" nzSm="10" nzXs="24" class="label-inline">Fecha de inicio de operaciones</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "startdateoperationprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "localdeliverydate" nzSm="9" nzXs="24" class="label-inline">Fecha de entrega de local</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "localdeliverydateprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "contractenddate" nzSm="10" nzXs="24" class="label-inline">Fecha de fin de contrato</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "contractenddateprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "projectdeliverydate" nzSm="16" nzXs="24" class="label-inline">Fecha de entrega de proyecto de arquitectura y espacio</nz-form-label>
+                            <nz-form-control nzSm="8" nzXs="24">
+                                <input nz-input type="text" formControlName = "projectdeliverydateprevious" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader = "Fechas y Plazos" nzActive = "true">
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "contractsubscriptiondate" nzSm="10" nzXs="24" class="label-inline">10. Fecha de Suscripción de contrato</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "contractsubscriptiondate" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "startdateoperation" nzSm="10" nzXs="24" class="label-inline">11. Fecha de inicio de operaciones</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "startdateoperation" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "localdeliverydate" nzSm="9" nzXs="24" class="label-inline">12. Fecha de entrega de local</nz-form-label>
+                            <nz-form-control nzSm="15" nzXs="24">
+                                <input nz-input type="text" formControlName = "localdeliverydate" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "contractenddate" nzSm="10" nzXs="24" class="label-inline">13. Fecha de fin de contrato</nz-form-label>
+                            <nz-form-control nzSm="14" nzXs="24">
+                                <input nz-input type="text" formControlName = "contractenddate" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col nzSpan = "12">
+                        <nz-form-item>
+                            <nz-form-label nzFor = "projectdeliverydate" nzSm="16" nzXs="24" class="label-inline">14. Fecha de entrega de proyecto de arquitectura y espacio</nz-form-label>
+                            <nz-form-control nzSm="8" nzXs="24">
+                                <input nz-input type="text" formControlName = "projectdeliverydate" />
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-card>
+</form>

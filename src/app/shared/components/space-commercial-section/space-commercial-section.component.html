@@ -1,0 +1,258 @@
+<form nz-form [formGroup] = "frmEspacioComercial">
+    <nz-card nzTitle = "Espacio Comercial Anterior" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSpin">        
+            <nz-collapse>
+                <nz-collapse-panel nzHeader = "Espacio Comercial - Contrato">
+                    <div nz-row>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localcode" nzSm="7" nzXs="24" class="label-inline">Código de local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localcodeprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localarea" nzSm="7" nzXs="24" class="label-inline">Área (m2)</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localareaprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localtype" nzSm="7" nzXs="24" class="label-inline">Tipo de local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localtypeprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "cadastrenumber" nzSm="7" nzXs="24" class="label-inline">Nro de catastro</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "cadastrenumberprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "propertylevel" nzSm="7" nzXs="24" class="label-inline">Nivel de inmueble</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "propertylevelprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>                    
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+                <nz-collapse-panel nzHeader = "Espacio Comercial" nzActive = "true">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "localcode" nzSm="7" nzXs="24" class="label-inline">1. Código de local</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "localcode" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "localarea" nzSm="7" nzXs="24" class="label-inline">2. Área (m2)</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "localarea" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "localtype" nzSm="7" nzXs="24" class="label-inline">3. Tipo de local</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "localtype" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "cadastrenumber" nzSm="7" nzXs="24" class="label-inline">4. Nro de catastro</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "cadastrenumber" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "propertylevel" nzSm="7" nzXs="24" class="label-inline">5. Nivel de inmueble</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "propertylevel" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>                    
+                    </div>
+                </nz-collapse-panel>
+                <nz-collapse-panel nzHeader = "Información Comercial" nzActive = "true">
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "tradename" nzSm="7" nzXs="24" class="label-inline">6. Nombre Comercial</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "tradename" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "turn" nzSm="7" nzXs="24" class="label-inline">7. Gíro</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "turn" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "businesshour" nzSm="7" nzXs="24" class="label-inline">8. Horario de atención</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "businesshour" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "11">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "item" nzSm="7" nzXs="24" class="label-inline">9. Rubro</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+
+                                    <nz-select nzShowSearch formControlName = "ddlitem" nzPlaceHolder = "Seleccione" *ngIf="istradenameitem" (ngModelChange) = "getSubItemByItem($event)">
+                                        <nz-option *ngFor="let item of itemList" [nzValue]="item.itemComponentId" [nzLabel]="item.name"></nz-option>
+                                    </nz-select>
+
+                                    <input nz-input type="text" formControlName = "item" *ngIf="!istradenameitem"/>
+
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "1" *ngIf="istradenameitem">
+                            <button nz-button nzType="default" (click) = "onApproveItem()" [nzLoading]="btnApproveItemLoading">Aprobar</button>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "ruc" nzSm="7" nzXs="24" class="label-inline">RUC</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "ruc" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "11">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "subitem" nzSm="7" nzXs="24" class="label-inline">Sub Rubro</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <nz-select nzShowSearch formControlName = "ddlsubitem" nzPlaceHolder = "Seleccione" *ngIf="istradenameitem">
+                                        <nz-option *ngFor="let item of subItemList" [nzValue]="item.subItemId" [nzLabel]="item.subItemDescription"></nz-option>
+                                    </nz-select>
+                                    <input nz-input type="text" formControlName = "subitem" *ngIf="!istradenameitem"/>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "businessname" nzSm="7" nzXs="24" class="label-inline">Razón Social</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "businessname" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "10">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "centralriskstatus" nzSm="12" nzXs="24" class="label-inline">Evaluación Crediticia - Dictamen</nz-form-label>
+                                <nz-form-control nzSm="12" nzXs="24">
+                                    <input nz-input type="text" formControlName = "centralriskstatus" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "1">
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <button nz-button nzType="default" (click) = "getCreditEvaluationSentinel()" [nzLoading] = "loadingUpdate">Actualizar</button>
+                                </nz-form-control>                                
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "fiscaladdress" nzSm="7" nzXs="24" class="label-inline">Domicilio Fiscal</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <textarea nz-input type="text" formControlName = "fiscaladdress"></textarea>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "comentaryriskcenter" nzSm="10" nzXs="24" class="label-inline">Evaluación Crediticia - Motivo</nz-form-label>
+                                <nz-form-control nzSm="14" nzXs="24">
+                                    <textarea nz-input type="text" formControlName = "comentaryriskcenter"></textarea>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "legalrepresentativeone" nzSm="7" nzXs="24" class="label-inline">Representante Legal 1</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "legalrepresentativeone" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "flagTipoPlantilla" nzSm="10" nzXs="24" class="label-inline">Tipo Flujo </nz-form-label>
+                                <nz-form-control nzSm="14" nzXs="24">
+                                    <input nz-input type="text" formControlName = "flagTipoPlantilla" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>                    
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "legalrepresentativetwo" nzSm="7" nzXs="24" class="label-inline">Representante Legal 2</nz-form-label>
+                                <nz-form-control nzSm="17" nzXs="24">
+                                    <input nz-input type="text" formControlName = "legalrepresentativetwo" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <div nz-row>
+                        <div nz-col nzSpan = "12">
+                            <nz-form-item>
+                                <nz-form-label nzFor = "startingnumber" nzSm="9" nzXs="24" class="label-inline">Número de Partida Registral</nz-form-label>
+                                <nz-form-control nzSm="15" nzXs="24">
+                                    <input nz-input type="text" formControlName = "startingnumber" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </nz-spin>
+    </nz-card>
+</form>
+<app-loading *ngIf="pageLoading"></app-loading>

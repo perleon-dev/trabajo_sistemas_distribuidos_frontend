@@ -1,0 +1,51 @@
+<form nz-form [formGroup] = "frmAgregarGarantia">
+    <nz-card nzTitle="Garantía" class="mt-20 card-template-head" [nzExtra] = "btnAddGuarantee">
+        <div nz-row>
+            <nz-table nzShowPagination = "false" [nzData] = "contractTemplateGuarranteList">
+                <thead>
+                    <th>Monto Concepto Renta Fija</th>
+                    <th>Nro Renta</th>
+                    <th>Monto Garantía</th>
+                    <th>Tipo Garantía</th>
+                    <th>Fecha Máxima Entrega</th>
+                    <th>Restricción</th>
+                    <th [nzWidth]="'60px'"></th>
+                    <th [nzWidth]="'60px'"></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of contractTemplateGuarranteList; index as i">
+                        <td>{{item.fixedRentSubAmountText}}</td>
+                        <td>{{item.rentNumber}}</td>
+                        <td>{{item.amount | amoutFormat}}</td>
+                        <td>{{item.guaranteeTypePaymentTemplateName}}</td>
+                        <td>{{item.maximunDate | dateFormat}}</td>
+                        <td>
+                            <label *ngIf = "i === 0" nz-checkbox [(ngModel)]="item.restriction" [ngModelOptions]="{standalone: true}" (ngModelChange) = "updateRestriction($event, item.index)">
+                            </label>
+                        </td>                        
+                        <td nzAlign="center">                                
+                            <button nz-button nzType="primary" (click) = "openAddGuaranteeModal(item.index)">
+                                <i nz-icon nzType="edit"></i>
+                            </button>                            
+                        </td>
+                        <td nzAlign="center">                                
+                            <button *ngIf = "i !== 0" nz-button nzType="default" class="btn-red" (click) = "onDeleteGuarantee(item.index)">
+                                <i nz-icon nzType="close"></i>
+                            </button>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+            <ng-template #btnAddGuarantee>
+                <button nz-button nzType = "primary" class="btn-header-card" (click) = "openAddGuaranteeModal()">
+                    <i nz-icon nzType="plus"></i>Agregar
+                </button>
+            </ng-template>
+        </div>
+        <div nz-row class="mb-20 mt-20" style="padding-bottom: 30px;">
+            <div class="text-right">
+                <button nz-button nzType="primary" nzSize = "large" (click) = "onSubmit()" [nzLoading] = "loadingSubmit">Guardar</button>
+            </div>
+        </div>
+    </nz-card>
+</form>

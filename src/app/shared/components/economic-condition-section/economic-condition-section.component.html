@@ -1,0 +1,43 @@
+<form nz-form [formGroup] = "frmCondicionEconomica">
+    <nz-card nzTitle = "Condiciones Económicas Anteriores" class="mt-20 card-template-head">
+        <nz-collapse>
+            <nz-collapse-panel nzHeader = "Condiciones Económicas - Contrato">
+                <nz-table nzShowPagination = "false" [nzData] = "economicConditionContractList" [nzNoResult] = "emptyTableOne"
+                [nzLoading] = "loadingTableEconomicCondictionContract">
+                    <tbody>
+                        <tr *ngFor = "let item of economicConditionContractList">
+                            <td>{{item.value}}</td>
+                            <td>{{item.from}}</td>
+                            <td>{{item.to}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+                <ng-template #emptyTableOne>
+                    <div style="text-align: center;" *ngIf="(economicConditionContractList.length === 0)">
+                        <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                        <p>No hay Datos</p>
+                    </div>
+                </ng-template>
+            </nz-collapse-panel>
+            <nz-collapse-panel nzHeader = "Condiciones Económicas" nzActive = "true">
+                <nz-table nzShowPagination = "false" [nzData] = "economicConditionList" [nzNoResult] = "emptyContractTemplateDiscount"
+                [nzLoading] = "loadingTableEconomicCondition">
+                    <tbody>
+                        <tr *ngFor = "let item of economicConditionList">
+                            <td>{{item.value}}</td>
+                            <td>{{item.from}}</td>
+                            <td>{{item.to}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+                <ng-template #emptyContractTemplateDiscount>
+                    <div style="text-align: center;" *ngIf="(economicConditionList.length === 0)">
+                        <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                        <p>No hay Datos</p>
+                    </div>
+                </ng-template>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </nz-card>
+</form>
+<app-loading *ngIf="pageLoading"></app-loading>

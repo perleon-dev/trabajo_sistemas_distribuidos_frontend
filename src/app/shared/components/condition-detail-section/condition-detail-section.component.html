@@ -1,0 +1,62 @@
+<form nz-form [formGroup] = "frmDetalleCondicion">
+    <nz-card nzTitle = "Detalles Condiciones" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSping">
+            <div nz-row>
+                <nz-collapse>
+                    <nz-collapse-panel nzHeader = "Datos de Adenda" nzActive = "true">
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "subcriptiondateaddendum" nzSm="10" nzXs="24" class="label-inline">Fecha de Suscripción de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="14" nzXs="24">                                    
+                                        <input nz-input type="text" formControlName = "subcriptiondateaddendum" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "validitydateaddendum" nzSm="10" nzXs="24" class="label-inline">Fecha de Vigencia de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="14" nzXs="24">
+                                        <input nz-input type="text" formControlName = "validitydateaddendum" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "24">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "addendumreason" nzSm="5" nzXs="24" class="label-inline">Motivo de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="19" nzXs="24">                                    
+                                        <textarea style="width: 100%;" formControlName = "addendumreason"></textarea>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader = "Observaciones" nzActive = "true">
+                        <div nz-row>
+                            <div nz-col nzSpan = "24">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "commercialobservation" nzSm="5" nzXs="24" class="label-inline">Observaciones Comerciales</nz-form-label>
+                                    <nz-form-control nzSm="19" nzXs="24">                                    
+                                        <textarea style="width: 100%;" formControlName = "commercialobservation"></textarea>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "24">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "legalobservation" nzSm="5" nzXs="24" class="label-inline">Observaciones Legales</nz-form-label>
+                                    <nz-form-control nzSm="19" nzXs="24">                                    
+                                        <textarea style="width: 100%;" formControlName = "legalobservation"></textarea>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </nz-collapse-panel>
+                </nz-collapse>
+            </div>
+        </nz-spin>
+    </nz-card>
+</form>

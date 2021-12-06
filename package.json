@@ -1,40 +1,78 @@
 {
-  "name": "pre-contract",
+  "name": "rp-advance-mf-contract",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve --open --port 0",
+    "build": "ng build --prod --build-optimizer",
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "hmr": "ng serve --configuration=hmr --open",
+    "lint-staged": "lint-staged",
+    "prettier": "prettier --write \"src/**/*.{ts,scss,less}\"",
+    "tslint": "tslint \"src/**/*.{ts}\"",
+    "stylelint": "stylelint \"src/**/*.{scss,less}\"",
+    "uat": "ng serve --configuration=uat --open"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.0.1",
-    "@angular/common": "~12.0.1",
-    "@angular/compiler": "~12.0.1",
-    "@angular/core": "~12.0.1",
-    "@angular/forms": "~12.0.1",
-    "@angular/platform-browser": "~12.0.1",
-    "@angular/platform-browser-dynamic": "~12.0.1",
-    "@angular/router": "~12.0.1",
-    "ng-zorro-antd": "^12.0.2",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.1.0",
-    "zone.js": "~0.11.4"
+    "@angular/animations": "~9.1.1",
+    "@angular/common": "~9.1.1",
+    "@angular/compiler": "~9.1.1",
+    "@angular/core": "~9.1.1",
+    "@angular/forms": "~9.1.1",
+    "@angular/platform-browser": "~9.1.1",
+    "@angular/platform-browser-dynamic": "~9.1.1",
+    "@angular/router": "~9.1.1",
+    "ng-realplaza-ui-advance": "^0.1.4",
+    "ng-zorro-antd": "8.5.2",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.0.1",
-    "@angular/cli": "~12.0.1",
-    "@angular/compiler-cli": "~12.0.1",
-    "@types/jasmine": "~3.6.0",
+    "@angular-devkit/build-angular": "~0.901.1",
+    "@angular/cli": "~9.1.1",
+    "@angular/compiler-cli": "~9.1.1",
+    "@angular/language-service": "~9.1.1",
+    "@angularclass/hmr": "2.1.3",
     "@types/node": "^12.11.1",
-    "jasmine-core": "~3.7.0",
-    "karma": "~6.3.0",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.4.1",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.2.3"
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~3.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "9.2.0",
+    "prettier": "1.19.1",
+    "protractor": "~5.4.3",
+    "stylelint": "13.2.1",
+    "stylelint-config-prettier": "8.0.1",
+    "stylelint-config-standard": "20.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "~3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,scss,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.{ts}": [
+      "tslint"
+    ],
+    "src/**/*.{scss,less}": [
+      "stylelint"
+    ]
   }
 }

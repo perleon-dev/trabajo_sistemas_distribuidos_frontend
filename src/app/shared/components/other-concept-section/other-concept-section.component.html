@@ -1,0 +1,538 @@
+<form nz-form  [formGroup]= "frmOtroConcepto">
+    <nz-card nzTitle = "Otros Conceptos Anteriores" class="mt-20 card-template-head">
+        <nz-spin [nzSpinning] = "loadingSping">
+            <div nz-row>
+                <nz-collapse>
+                    <nz-collapse-panel nzHeader = "Otros Conceptos - Contrato">
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Revisión de Proyectos</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Derecho de Llave</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpayment" nzSm="7" nzXs="24" class="label-inline">Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyRevisionProjectAmount">
+                                            <input nz-input type="text" formControlName = "amountpaymentprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "rentnumber" nzSm="7" nzXs="24" class="label-inline">Nro de rentas</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "rentnumberprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "paymentdate" nzSm="7" nzXs="24" class="label-inline">Fecha de pago</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "paymentdateprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpermanence" nzSm="18" nzXs="24" class="label-inline">Monto del derecho de llave / Derecho de permanencia</nz-form-label>
+                                    <nz-form-control nzSm="6" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyKeyRightAmount">
+                                            <input nz-input type="text" formControlName = "amountpermanenceprevious" />
+                                        </nz-input-group> 
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12" nzOffset="12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "maximumdeliverydate" nzSm="7" nzXs="24" class="label-inline">Fecha máxima de entrega</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "maximumdeliverydateprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Póliza de seguro</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localtype" nzSm="7" nzXs="24" class="label-inline">Tipo de local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localtypeprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localitem" nzSm="7" nzXs="24" class="label-inline">Rubro del local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localitemprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountinsured" nzSm="7" nzXs="24" class="label-inline">Monto asegurado</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group nzAddOnBefore="$">
+                                            <input nz-input type="text" formControlName = "amountinsuredprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Válvula de agua</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Publicaciones impresas y/o digitales</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpayprotection" nzSm="7" nzXs="24" class="label-inline">Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtection">
+                                            <input nz-input type="text" formControlName = "amountpayprotectionprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaypublicity" nzSm="7" nzXs="24" class="label-inline">Monto a pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "amountpaypublicityprevious" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de conexión de aire acondicionado</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de obra</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostconnectionairconditioning" nzSm="7" nzXs="24" class="label-inline">Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtection">
+                                            <input nz-input type="text" formControlName = "amountpaycostconnectionairconditioningprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostwork" nzSm="7" nzXs="24" class="label-inline">Monto a pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayCostWorkprevious">
+                                            <input nz-input type="text" formControlName = "amountpaycostworkprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de operación de aire acondicionado</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostairconditioningoperation" nzSm="7" nzXs="24" class="label-inline">Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtectionprevious">
+                                            <input nz-input type="text" formControlName = "amountpaycostairconditioningoperationprevious" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader = "Otros Conceptos" nzActive = "true">
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Revisión de Proyecto de Arq y Esp</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Derecho de Llave / Derecho de permanencia</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpayment" nzSm="7" nzXs="24" class="label-inline">34. Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyRevisionProjectAmount">
+                                            <input nz-input type="text" formControlName = "amountpayment" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "rentnumber" nzSm="7" nzXs="24" class="label-inline">35. Nro de rentas</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "rentnumber" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "paymentdate" nzSm="7" nzXs="24" class="label-inline">Fecha de pago</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "paymentdate" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpermanence" nzSm="18" nzXs="24" class="label-inline">36. Monto del derecho de llave / Derecho de permanencia</nz-form-label>
+                                    <nz-form-control nzSm="6" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyKeyRightAmount">
+                                            <input nz-input type="text" formControlName = "amountpermanence" />
+                                        </nz-input-group> 
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12" nzOffset="12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "maximumdeliverydate" nzSm="7" nzXs="24" class="label-inline">Fecha máxima de entrega</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "maximumdeliverydate" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Póliza de seguro</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <div class="text-right">
+                                        <button *ngIf = "contractTemplateKeyRightFound.length > 1" nz-button nzType="primary" (click) = "openKeyRightDetailModal()">Ver Detalle</button>
+                                    </div>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localtype" nzSm="7" nzXs="24" class="label-inline">37. Tipo de local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localtype" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "localitem" nzSm="7" nzXs="24" class="label-inline">38. Rubro del local</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "localitem" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountinsured" nzSm="7" nzXs="24" class="label-inline">39. Monto asegurado</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group nzAddOnBefore="$">
+                                            <input nz-input type="text" formControlName = "amountinsured" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Kit de Protección Contra Incendio</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Publicaciones impresas y/o digitales</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpayprotection" nzSm="7" nzXs="24" class="label-inline">42. Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtection">
+                                            <input nz-input type="text" formControlName = "amountpayprotection" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaypublicity" nzSm="7" nzXs="24" class="label-inline">40. Monto a pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <input nz-input type="text" formControlName = "amountpaypublicity" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de conexión de aire acondicionado</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de obra</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostconnectionairconditioning" nzSm="7" nzXs="24" class="label-inline">43. Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtection">
+                                            <input nz-input type="text" formControlName = "amountpaycostconnectionairconditioning" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostwork" nzSm="7" nzXs="24" class="label-inline">41. Monto a pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayCostWork">
+                                            <input nz-input type="text" formControlName = "amountpaycostwork" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzSm="24" nzXs="24" class="label-inline text-left">Costo de operación de aire acondicionado</nz-form-label>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "amountpaycostairconditioningoperation" nzSm="7" nzXs="24" class="label-inline">44. Monto a Pagar</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <nz-input-group [nzAddOnBefore]="symbolCurrencyAmountPayProtection">
+                                            <input nz-input type="text" formControlName = "amountpaycostairconditioningoperation" />
+                                        </nz-input-group>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader = "Datos de Adenda" nzActive = "true">
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "subcriptiondateaddendum" nzSm="10" nzXs="24" class="label-inline">Fecha de Suscripción de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="14" nzXs="24">                                    
+                                        <input nz-input type="text" formControlName = "subcriptiondateaddendum" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "validitydateaddendum" nzSm="10" nzXs="24" class="label-inline">Fecha de Vigencia de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="14" nzXs="24">
+                                        <input nz-input type="text" formControlName = "validitydateaddendum" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "addendumreason" nzSm="7" nzXs="24" class="label-inline">Motivo de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="17" nzXs="24">                                    
+                                        <input nz-input type="text" formControlName = "addendumreason" />
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "traderemarks" nzSm="10" nzXs="24" class="label-inline">Observaciones Comerciales</nz-form-label>
+                                    <nz-form-control nzSm="14" nzXs="24">
+                                        <textarea style="width: 100%;" formControlName = "traderemarks"></textarea>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <div nz-row>
+                            <div nz-col nzSpan = "12">
+                                <nz-form-item>
+                                    <nz-form-label nzFor = "observationaddendum" nzSm="9" nzXs="24" class="label-inline">Observaciones de la Adenda</nz-form-label>
+                                    <nz-form-control nzSm="15" nzXs="24">                                    
+                                        <textarea style="width: 100%;" formControlName = "observationaddendum"></textarea>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader = "Visados de Garantía" nzActive = "true">
+                        <nz-table nzShowPagination="false" [nzData]="visaGuarranteFound"
+                        [nzNoResult]="emptyContractVisaGuarantees">
+                        <thead>
+                            <th>Perfil</th>
+                            <th>Usuario</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Comentario</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of visaGuarranteFound">
+                                <td>{{item.perf_c_vnomb}}</td>
+                                <td>{{item.user_full_name}}</td>
+                                <td>{{item.visad_c_estado}}</td>
+                                <td>{{item.visad_c_fecha_registro | date:'dd/MM/yyyy h:mma'}}</td>
+                                <td>{{item.visad_c_comentario}}</td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                    <ng-template #emptyContractVisaGuarantees>
+                        <div style="text-align: center;" *ngIf="(visaGuarranteFound.length === 0)">
+                            <i nz-icon nzType="inbox" style="font-size: 40px;"></i>
+                            <p>No hay datos</p>
+                        </div>
+                    </ng-template>
+                    </nz-collapse-panel>
+                </nz-collapse>
+            </div>
+            <div nz-row class="mt-20">
+                <div nz-col [nzSm] = "24">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "observation" nzSm="3" nzXs="24">Obs Comerciales</nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">
+                            <textarea style="width: 100%;" formControlName = "observation"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row class="mt-10">
+                <div nz-col [nzSm] = "24">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "legalobservation" nzSm="3" nzXs="24">Observaciones Legales</nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">
+                            <textarea style="width: 100%;" formControlName = "legalobservation"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row>
+                <div nz-col [nzSm] = "24">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "previouscomment" nzSm="3" nzXs="24">Comentario Anterior</nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">
+                            <textarea style="width: 100%;" formControlName = "previouscomment"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row *ngIf = "showControl">
+                <div nz-col [nzSm] = "24">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "comment" nzSm="3" nzXs="24">Comentario</nz-form-label>
+                        <nz-form-control nzSm="21" nzXs="24">
+                            <textarea style="width: 100%;" formControlName = "comment"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row *ngIf = "showControl">
+                <div nz-col [nzSm] = "12">
+                    <nz-form-item>
+                        <nz-form-label nzFor = "ddldisapprovalmotive" nzSm="6" nzXs="24" class="label-inline">Motivo Desaprobación</nz-form-label>
+                        <nz-form-control nzSm="18" nzXs="24">
+                            <nz-select nzShowSearch formControlName = "ddldisapprovalmotive" nzPlaceHolder = "Seleccione" >
+                                <nz-option *ngFor="let item of disapprovalMoviteList" [nzValue]="item.parameterDetailId" [nzLabel]="item.description"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div nz-row class="mt-10">
+                <div nz-col [nzSm] = "12">
+                    <nz-form-item>
+                        <span>*Todos los montos no incluyen el Impuesto General a las Ventas (IGV)</span>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzSm] = "12">
+                    <nz-form-item>
+                        <div class="text-right">
+                            <label *ngIf = "showChkUgency" nz-checkbox formControlName = "chkurgent" (ngModelChange) = "onChangechkurgent($event)">Urgente</label>
+                            <button nz-button nzType="default" nzSize = "large" style="margin-left: 5px; margin-right: 5px;" (click) = "onDownloadContractTemplateDetail()" [nzLoading] = "loadingDownload"><i nz-icon nzType="arrow-down" nzTheme="outline"></i>Descargar</button>
+                            <button *ngIf = "showControl" nz-button nzType="primary" nzSize = "large" style="margin-left: 5px; margin-right: 5px;" (click) = "onApprove()" [nzLoading] = "loadingApprove">Aprobar</button>
+                            <button *ngIf = "showControl" nz-button nzType="default" nzSize = "large" style="background-color: red; color: white; border-color: red;" [nzLoading] = "loadingDisapprove" (click) = "onDisapprove()" >Desaprobar</button>
+                        </div>
+                    </nz-form-item>                    
+                </div>
+            </div>
+        </nz-spin>
+    </nz-card>
+</form>
+<app-loading *ngIf="isLoading"></app-loading>

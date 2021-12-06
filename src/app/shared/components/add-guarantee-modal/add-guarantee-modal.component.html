@@ -1,0 +1,52 @@
+<form nz-form [formGroup] = "frmAgregarGarantiaModal">
+    <div nz-row>
+        <div nz-col nzSm = "24">
+            <nz-form-item>
+                <nz-form-label nzRequired nzSm="12" nzXs="24" nzRequired nzFor = "ddlguarantetype" class="label-inline">Tipo de Garantía</nz-form-label>
+                <nz-form-control nzSm="12" nzXs="24" nzErrorTip = "campo obligatorio">
+                    <nz-select nzShowSearch formControlName = "ddlguarantetype" nzPlaceHolder = "Seleccione">
+                        <nz-option *ngFor="let item of guaranteeTypeList" [nzValue]="item.guaranteeTypePaymentTemplateId" [nzLabel]="item.guaranteeTypePaymentTemplateName"></nz-option>                   
+                    </nz-select>
+                </nz-form-control>               
+            </nz-form-item>
+        </div>
+        <div nz-col nzSm = "24">
+            <nz-form-item>
+                <nz-form-label nzRequired nzSm="12" nzXs="24" nzRequired nzFor = "ddlfixedrentvalidityamount" class="label-inline">Monto por concepto de la Renta Fija</nz-form-label>
+                <nz-form-control nzSm="12" nzXs="24" nzErrorTip = "campo obligatorio">
+                    <nz-select nzShowSearch formControlName = "ddlfixedrentvalidityamount" nzPlaceHolder = "Seleccione" (ngModelChange)="changeFixedRentValidityAmount($event)">
+                        <nz-option *ngFor="let item of contractTemplateFixedRentList" [nzValue]="item.contractValidityId" [nzLabel]="item.fixedRentSubAmountText"></nz-option>                 
+                    </nz-select>
+                </nz-form-control>               
+            </nz-form-item>
+        </div>
+        <div nz-col nzSm = "24">
+            <nz-form-item>
+                <nz-form-label nzRequired nzSm="12" nzXs="24" nzRequired nzFor = "rentnumber" class="label-inline">Nro de Rentas</nz-form-label>
+                <nz-form-control nzSm="12" nzXs="24" nzErrorTip = "campo obligatorio">
+                    <input nz-input type="number" formControlName = "rentnumber" (input) = "changeRentalsNumber($event.target.value)"/>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col nzSm = "24">
+            <nz-form-item>
+                <nz-form-label nzSm="12" nzXs="24" nzFor = "guaranteeamount" class="label-inline">Monto Garantía</nz-form-label>
+                <nz-form-control nzSm="12" nzXs="24">
+                    <input nz-input type="text" formControlName = "guaranteeamount" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col nzSm = "24">
+            <nz-form-item>
+                <nz-form-label nzRequired nzSm="12" nzXs="24" nzRequired nzFor = "datemaximumdelivery" class="label-inline">Fecha máxima de entrega</nz-form-label>
+                <nz-form-control nzSm="12" nzXs="24" nzErrorTip = "campo obligatorio">
+                    <nz-date-picker formControlName = "datemaximumdelivery" [nzFormat] = "dateFormat"></nz-date-picker>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>    
+</form>
+<div *nzModalFooter>
+    <button nz-button nzType="default" (click) = "onCancel()">Cancelar</button>
+    <button nz-button nzType="primary" (click) = "onSubmit()">Aceptar</button>
+</div>

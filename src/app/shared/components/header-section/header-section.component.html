@@ -1,0 +1,44 @@
+<form nz-form [formGroup] = "frmSeccionCabecera">
+    <nz-spin [nzSpinning] = "loadingSpin">
+        <div nz-row>
+            <div nz-col nzSpan="12" nzOffset="12">
+                <nz-form-item>
+                    <nz-form-label nzFor = "contracttemplateid" nzSm="7" nzXs="24" class="label-inline label-bold">Nro. Plantilla</nz-form-label>
+                    <nz-form-control nzSm="17" nzXs="24">
+                        <input nz-input type="text" formControlName = "contracttemplateid" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="12" nzOffset="12">
+                <nz-form-item>
+                    <nz-form-label nzFor = "commercialexecutive" nzSm="7" nzXs="24" class="label-inline label-bold">Ejecutivo Comercial</nz-form-label>
+                    <nz-form-control nzSm="17" nzXs="24">
+                        <input nz-input type="text" formControlName = "commercialexecutive" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="12" nzOffset="12">
+                <nz-form-item>
+                    <nz-form-label nzFor = "generationdate" nzSm="7" nzXs="24" class="label-inline label-bold">Fecha Generación</nz-form-label>
+                    <nz-form-control nzSm="17" nzXs="24">
+                        <input nz-input type="text" formControlName = "generationdate" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row>
+            <div nz-col nzSpan="12" nzOffset="12">
+                <nz-form-item>
+                    <nz-form-label nzFor = "contractid" nzSm="7" nzXs="24" class="label-inline label-bold">Nro. Contrato</nz-form-label>
+                    <nz-form-control nzSm="17" nzXs="24">
+                        <input nz-input type="text" formControlName = "contractid" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+    </nz-spin>    
+</form>
