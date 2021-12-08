@@ -141,8 +141,8 @@ export class CargaMasivaComponent implements OnInit {
                             startDate ?? "",
                             endDate ?? "",
                             constants.STATE.ACTIVE).subscribe((response:any)=>{
-      this.contractsTradenameList = response.item1;
-      this.totalRows = response.item2;
+      this.contractsTradenameList = response.items;
+      this.totalRows = response.quantity;
       this.isLoading = false;
     })
 

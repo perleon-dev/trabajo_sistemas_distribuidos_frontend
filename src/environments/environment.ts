@@ -3,7 +3,7 @@ export const environment = {
   hmr: false,
   api: {
     customers: 'https://api.realplazalabs.com/v1/customers',
-    contracts: 'https://localhost:44361',
+    contracts: 'http://18.218.163.86/precontratos/contracts',
     advance: 'https://api.realplazalabs.com/common/advance',
     storage: 'https://api.realplazalabs.com/v1/storage',
     security: 'https://api.realplazalabs.com/v1/oauth'
